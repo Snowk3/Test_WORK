@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SISTEMA DE TRIBUTACIÓN SIMPLIFICADA DEL IVA, ART. 29 D.L 825</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Iconos de FontAwesome para el ícono del tooltip -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>SISTEMA DE TRIBUTACIÓN SIMPLIFICADA DEL IVA, ART. 29 D.L 825</h1>
+      <form id="tributacionForm">
+        <!-- Tabla de campos -->
+        <table class="form-table">
+          <thead>
+            <tr>
+              <th>Línea</th>
+              <th>Código</th>
+              <th>Descripción</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Línea 81: Ventas del período, Código 529 -->
+            <tr>
+              <td>81</td>
+              <td>529</td>
+              <td>
+                Ventas del período
+                <span class="tooltip-icon">
+                  <i class="fas fa-info-circle"></i>
+                  <span class="tooltip-text">
+                    Esto es un tooltip para el código 529.
+                    <a href="https://www.sii.cl" target="_blank"
+                      >Mayor detalle en www.sii.cl</a
+                    >
+                  </span>
+                </span>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="codigo529"
+                  name="codigo529"
+                  placeholder="Ingrese un número"
+                  required
+                />
+                <div class="alert" id="alert529"></div>
+              </td>
+            </tr>
+            <!-- Línea 82: Crédito del período, Código 530 -->
+            <tr>
+              <td>82</td>
+              <td>530</td>
+              <td>
+                Crédito del período
+                <span class="tooltip-icon">
+                  <i class="fas fa-info-circle"></i>
+                  <span class="tooltip-text">
+                    Esto es un tooltip para el código 530.
+                    <a href="https://www.sii.cl" target="_blank"
+                      >Mayor detalle en www.sii.cl</a
+                    >
+                  </span>
+                </span>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="codigo530"
+                  name="codigo530"
+                  placeholder="Ingrese un número"
+                  required
+                />
+                <div class="alert" id="alert530"></div>
+              </td>
+            </tr>
+            <!-- Línea 83: IVA determinado, Código 409 (Automático) -->
+            <tr>
+              <td>83</td>
+              <td>409</td>
+              <td>
+                IVA determinado por concepto de Tributación Simplificada
+                <span class="tooltip-icon">
+                  <i class="fas fa-info-circle"></i>
+                  <span class="tooltip-text">
+                    Esto es un tooltip para el código 409.
+                    <a href="https://www.sii.cl" target="_blank"
+                      >Mayor detalle en www.sii.cl</a
+                    >
+                  </span>
+                </span>
+              </td>
+              <td>
+                <input type="text" id="codigo409" name="codigo409" readonly />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Botones -->
+        <div class="form-actions">
+          <button type="button" id="ingresarPropuestaBtn">
+            Ingresar Propuesta
+          </button>
+          <button type="button" id="borrarDatosBtn">Borrar Datos</button>
+          <button type="button" id="guardarDatosBtn">Guardar Datos</button>
+          <button type="button" id="validarBtn" disabled>Validar</button>
+          <button type="button" id="enviarBtn">Enviar</button>
+          <button type="button" id="formularioCompletoBtn">
+            Ir a formulario completo
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Modal para mostrar la validación -->
+    <div id="validationModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Resultado de Validación</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Valor Ingresado</th>
+              <th>Valor del Vector</th>
+              <th>Diferencia</th>
+            </tr>
+          </thead>
+          <tbody id="validationTableBody">
+            <!-- Filas generadas dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
