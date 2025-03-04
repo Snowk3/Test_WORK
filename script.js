@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const validationTableBody = document.getElementById("validationTableBody");
 
   // Constantes
-  const VECTOR_A = 1000000; // Valor conocido para Código 529
+  const VECTOR_A = 7000000; // Valor conocido para Código 529
   const VECTOR_B = 500000; // Valor conocido para Código 530
   const VALOR_MAXIMO = 999999999;
 
